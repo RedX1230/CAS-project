@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #FCFBF7;
+  --foreground: #221E1C;
+  --font-serif: "Newsreader", "Playfair Display", "Cormorant Garamond", "EB Garamond", "Georgia", "Cambria", "Times New Roman", serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+@layer base {
+  body {
+    background-color: #FCFBF7;
+    color: #221E1C;
+    font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: #E7DDD0;
+    color: #171312;
+  }
+}
+
+/* Literary typography touches */
+.font-editorial-heading {
+  font-family: var(--font-serif), Georgia, Cambria, "Times New Roman", serif;
+  letter-spacing: -0.015em;
+}
+
+.font-reading-serif {
+  font-family: var(--font-serif), Georgia, Cambria, "Times New Roman", serif;
+  font-size: 1.125rem;
+  line-height: 1.85;
+}
+
+/* Subtle deckle/paper border accent */
+.paper-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(61, 53, 49, 0.15) 20%, rgba(61, 53, 49, 0.15) 80%, transparent);
+}
+
+.paper-card {
+  background-color: #FAF7F2;
+  border: 1px solid rgba(61, 53, 49, 0.1);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.paper-card:hover {
+  border-color: rgba(61, 53, 49, 0.25);
+  box-shadow: 0 4px 20px -2px rgba(42, 36, 33, 0.05);
+}
+
+/* Stanza poem formatting */
+.poem-stanza {
+  white-space: pre-line;
+  line-height: 1.9;
+  letter-spacing: 0.01em;
+}
+
+/* Print/reading focus */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+}
